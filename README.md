@@ -129,14 +129,6 @@ http://localhost:5173
 - Responsive design
 - Database persistence
 
-## Live Demo
-
-Frontend:
-https://odoo-traveloop-frontend.vercel.app
-
-Backend API:
-https://odoo-traveloop.onrender.com
-
 ---
 
 # 👨‍💻 Author
