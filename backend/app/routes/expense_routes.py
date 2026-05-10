@@ -7,6 +7,8 @@ from app.schemas.expense_schema import ExpenseCreate
 
 router = APIRouter()
 
+# CREATE EXPENSE
+
 @router.post("/expenses")
 def create_expense(expense: ExpenseCreate):
 
@@ -29,6 +31,8 @@ def create_expense(expense: ExpenseCreate):
     }
 
 
+# GET ALL EXPENSES
+
 @router.get("/expenses")
 def get_expenses():
 
@@ -37,3 +41,27 @@ def get_expenses():
     expenses = db.query(Expense).all()
 
     return expenses
+
+
+# DELETE EXPENSE
+
+@router.delete("/expenses/{expense_id}")
+def delete_expense(expense_id: int):
+
+    db: Session = SessionLocal()
+
+    expense = db.query(Expense).filter(
+        Expense.id == expense_id
+    ).first()
+
+    if not expense:
+        return {
+            "error": "Expense not found"
+        }
+
+    db.delete(expense)
+    db.commit()
+
+    return {
+        "message": "Expense deleted successfully"
+    }
