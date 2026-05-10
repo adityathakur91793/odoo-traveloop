@@ -1,13 +1,18 @@
 from fastapi import FastAPI
 from app.database import engine, Base
+
 from app.models.user import User
+from app.models.trip import Trip
+
 from app.routes.user_routes import router as user_router
+from app.routes.trip_routes import router as trip_router
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
 app.include_router(user_router)
+app.include_router(trip_router)
 
 @app.get("/")
 def root():
