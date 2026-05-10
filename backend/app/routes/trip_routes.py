@@ -1,11 +1,14 @@
 from fastapi import APIRouter
 from sqlalchemy.orm import Session
+from sqlalchemy import func
 
 from app.database import SessionLocal
 from app.models.trip import Trip
+from app.models.expense import Expense
 from app.schemas.trip_schema import TripCreate
 
 router = APIRouter()
+
 
 @router.post("/trips")
 def create_trip(trip: TripCreate):
@@ -39,3 +42,28 @@ def get_trips():
     trips = db.query(Trip).all()
 
     return trips
+
+
+@router.get("/trips/{trip_id}/budget")
+def trip_budget_summary(trip_id: int):
+
+    db: Session = SessionLocal()
+
+    trip = db.query(Trip).filter(Trip.id == trip_id).first()
+
+    total_spent = db.query(
+        func.sum(Expense.amount)
+    ).filter(
+        Expense.trip_id == trip_id
+    ).scalar()
+
+    if total_spent is None:
+        total_spent = 0
+
+    remaining_budget = trip.budget - total_spent
+
+    return {
+        "trip_budget": trip.budget,
+        "total_spent": total_spent,
+        "remaining_budget": remaining_budget
+    }
