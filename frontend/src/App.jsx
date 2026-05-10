@@ -288,6 +288,7 @@ function App() {
                 <option>Transport</option>
                 <option>Entertainment</option>
                 <option>Shopping</option>
+                <option value="Others">Others</option>
 
               </select>
 
