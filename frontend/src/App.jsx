@@ -17,7 +17,7 @@ function App() {
   const [amount, setAmount] = useState("")
   const [category, setCategory] = useState("Food")
 
-  const API_URL = "https://odoo-traveloop.onrender.com"
+  const API_URL = "http://127.0.0.1:8000"
 
   const fetchBudget = async () => {
     try {
