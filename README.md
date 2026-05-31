@@ -1,4 +1,4 @@
-# 🌍 Traveloop Dashboard
+# Traveloop Dashboard
 
 Traveloop Dashboard is a full-stack travel expense management web application built for hackathon submission.
 
@@ -6,32 +6,32 @@ It allows users to manage trip budgets, track expenses, visualize spending analy
 
 ---
 
-# 🚀 Features
+# Features
 
-## ✅ Expense Management
+## Expense Management
 - Add expenses
 - Delete expenses
 - Real-time updates
 
-## ✅ Budget Tracking
+## Budget Tracking
 - Total trip budget
 - Total spent amount
 - Remaining budget calculation
 - Budget usage progress bar
 
-## ✅ Analytics Dashboard
+## Analytics Dashboard
 - Interactive pie chart
 - Category-wise spending visualization
 - Dynamic updates
 
-## ✅ Responsive UI
+## Responsive UI
 - Mobile responsive layout
 - Modern dashboard interface
 - Clean card-based design
 
 ---
 
-# 🛠 Tech Stack
+# Tech Stack
 
 ## Frontend
 - React.js
@@ -47,7 +47,7 @@ It allows users to manage trip budgets, track expenses, visualize spending analy
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```bash
 traveloop/
@@ -69,7 +69,7 @@ traveloop/
 
 ---
 
-# ⚡ Backend Setup
+# Backend Setup
 
 ```bash
 cd backend
@@ -91,7 +91,7 @@ http://127.0.0.1:8000
 
 ---
 
-# ⚡ Frontend Setup
+# Frontend Setup
 
 ```bash
 cd frontend
@@ -109,7 +109,7 @@ http://localhost:5173
 
 ---
 
-# 📊 API Endpoints
+# API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -120,7 +120,7 @@ http://localhost:5173
 
 ---
 
-# 🎯 Hackathon Highlights
+# Hackathon Highlights
 
 - Full-stack architecture
 - REST API integration
@@ -129,10 +129,3 @@ http://localhost:5173
 - Responsive design
 - Database persistence
 
----
-
-# 👨‍💻 Author
-
-Aditya Thakur
-
-Built with ❤️ using React + FastAPI
